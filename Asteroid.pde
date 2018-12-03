@@ -16,22 +16,46 @@ public class Asteroid extends Floater
     bY =0*2;
     cX =(int)(Math.random()*5-10)*2;
     cY =8*2;
-    xCorners[0] = (0+(int)(Math.random()*5-10))*2;
-    yCorners[0] = (10+(int)(Math.random()*3-10))*2;
-    xCorners[1] = (5+(int)(Math.random()*5-10))*2;
-    yCorners[1] = (5+(int)(Math.random()*3-10))*2;
-    xCorners[2] = (10+(int)(Math.random()*5-10))*2;
-    yCorners[2] = (0+(int)(Math.random()*3-10))*2;
-    xCorners[3] = (5+(int)(Math.random()*5-10))*2;
-    yCorners[3] = (-5+(int)(Math.random()*3-10))*2;
-    xCorners[4] = (0+(int)(Math.random()*5-10))*2;
-    yCorners[4] = (-10+(int)(Math.random()*3-10))*2;
-    xCorners[5] =(-5+(int)(Math.random()*5-10))*2;
-    yCorners[5] = (-5+(int)(Math.random()*3-10))*2;
-    xCorners[6] = (-10+(int)(Math.random()*5-10))*2;
-    yCorners[6] = (0+(int)(Math.random()*3-10))*2;
-    xCorners[7] = (-5+(int)(Math.random()*5-10)*2);
-    yCorners[7] = (5+(int)(Math.random()*3-10))*2;
+    //xCorners[0] = (0+(int)(Math.random()*5-10))*2;
+    //yCorners[0] = (10+(int)(Math.random()*3-10))*2;
+    //xCorners[1] = (5+(int)(Math.random()*5-10))*2;
+    //yCorners[1] = (5+(int)(Math.random()*3-10))*2;
+    //xCorners[2] = (10+(int)(Math.random()*5-10))*2;
+    //yCorners[2] = (0+(int)(Math.random()*3-10))*2;
+    //xCorners[3] = (5+(int)(Math.random()*5-10))*2;
+    //yCorners[3] = (-5+(int)(Math.random()*3-10))*2;
+    //xCorners[4] = (0+(int)(Math.random()*5-10))*2;
+    //yCorners[4] = (-10+(int)(Math.random()*3-10))*2;
+    //xCorners[5] =(-5+(int)(Math.random()*5-10))*2;
+    //yCorners[5] = (-5+(int)(Math.random()*3-10))*2;
+    //xCorners[6] = (-10+(int)(Math.random()*5-10))*2;
+    //yCorners[6] = (0+(int)(Math.random()*3-10))*2;
+    //xCorners[7] = (-5+(int)(Math.random()*5-10)*2);
+    //yCorners[7] = (5+(int)(Math.random()*3-10))*2;
+    //xCorners[0] = (0+(int)(Math.random()*5-10))*2;
+    //yCorners[0] = (10+(int)(Math.random()*3-10))*2;
+    //xCorners[1] = (5+(int)(Math.random()*5-10))*2;
+    //yCorners[1] = (5+(int)(Math.random()*3-10))*2;
+    //xCorners[2] = (10+(int)(Math.random()*5-10))*2;
+    //yCorners[2] = (0+(int)(Math.random()*3-10))*2;
+    //xCorners[3] = (5+(int)(Math.random()*5-10))*2;
+    //yCorners[3] = (-5+(int)(Math.random()*3-10))*2;
+    //xCorners[4] = (0+(int)(Math.random()*5-10))*2;
+    //yCorners[4] = (-10+(int)(Math.random()*3-10))*2;
+    //xCorners[5] =(-5+(int)(Math.random()*5-10))*2;
+    //yCorners[5] = (-5+(int)(Math.random()*3-10))*2;
+    //xCorners[6] = (-10+(int)(Math.random()*5-10))*2;
+    //yCorners[6] = (0+(int)(Math.random()*3-10))*2;
+    //xCorners[7] = (-5+(int)(Math.random()*5-10)*2);
+    //yCorners[7] = (5+(int)(Math.random()*3-10))*2;
+    for (int i = 0; i < 8; i++) {
+  double magnitude = Math.random();
+  double x = magnitude*30*Math.sin(i*Math.PI/4);
+  double y = magnitude*30*Math.cos(i*Math.PI/4);
+  xCorners[i] = (int)x;
+  yCorners[i] = (int)y;
+}
+
 
     myColor =  color(255);
     myCenterX = (int)(Math.random()*width);
@@ -116,7 +140,7 @@ public class Asteroid extends Floater
 strokeWeight(1.5);
     
     //translate the (x,y) center of the ship to the correct position
-    translate((float)myCenterX, (float)myCenterY);
+    translate((float)myCenterX+2, (float)myCenterY+2);
 
     //convert degrees to radians for rotate()     
     float dRadians = (float)(myPointDirection*(Math.PI/180));
@@ -134,7 +158,7 @@ strokeWeight(1.5);
 
     //"unrotate" and "untranslate" in reverse order
     rotate(-1*dRadians);
-    translate(-1*(float)myCenterX, -1*(float)myCenterY);
+    translate(-1*(float)myCenterX-2, -1*(float)myCenterY-2);
   }  
   public void checkCollision(){
     
@@ -155,4 +179,5 @@ strokeWeight(1.5);
       
     }
   }
+
 }
