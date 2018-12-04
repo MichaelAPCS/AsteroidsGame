@@ -1,5 +1,5 @@
 //your variable declarations here
-Bullet b;
+ArrayList <Bullet> bList;
 Spaceship s;
 Star[] twinkle;
 //Asteroid[] rock;
@@ -11,8 +11,11 @@ public void setup()
   background(0);
   s = new Spaceship();
   twinkle = new Star[100];
-  b = new Bullet(s);
-  //rock = new Asteroid[20];
+  //b = new Bullet(s);
+   bList = new ArrayList <Bullet>();
+    bList.add(new Bullet(s));
+     
+ 
   list = new ArrayList <Asteroid>();
   for(int i =0; i<twinkle.length;i++){
     twinkle[i] = new Star();
@@ -31,8 +34,8 @@ public void draw()
   //b.show();
   s.show();
   s.move();
-  b.show();
-  b.move();
+  //b.show();
+  //b.move();
   for(int i =0; i<twinkle.length;i++){
     twinkle[i].show();
   }
@@ -44,8 +47,12 @@ for(int i =0; i<list.size();i++){
   //rock[i].setDirectionY((int)(Math.random()*3)-1);
    
   }
+  for(int i =0; i<bList.size();i++){
+   bList.get(i).move();
+   bList.get(i).show();
+   //bList.get(i).checkCollision();
 
-
+  }
 }
 public void keyPressed() {
   if (key == 'w') {
@@ -66,7 +73,9 @@ public void keyPressed() {
     s.setPointDirection((int)(Math.random()*360));
     s.setX((int)(Math.random()*width));
     s.setY((int)(Math.random()*width));
-    
+   
   }
-  
+  if (key == 'g') {
+     bList.add(new Bullet(s));
+   }
 }
