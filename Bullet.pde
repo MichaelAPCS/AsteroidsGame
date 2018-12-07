@@ -1,15 +1,18 @@
 private double dRadians;
 private Spaceship Bessie;
 public class Bullet extends Floater{
- public Bullet(Spaceship theShip){
-    Bessie = theShip;
+ public Bullet(){
+ 
+ }
+  public Bullet(Spaceship theShip){
     myColor =  color(255);
-    myCenterX = Bessie.getX();
-    myCenterY = Bessie.getY();
-    myPointDirection = Bessie.getPointDirection();
-    dRadians =myPointDirection*(Math.PI/180);
-    myDirectionX = 5 * Math.cos(dRadians) + Bessie.getDirectionX();
-    myDirectionY = 5 * Math.sin(dRadians) + Bessie.getDirectionY();
+    myCenterX = theShip.getX();
+    myCenterY = theShip.getY();
+    myPointDirection = theShip.getPointDirection();
+    dRadians = myPointDirection*(Math.PI/180);
+    myDirectionX = 5 * Math.cos(dRadians) + theShip.getDirectionX();
+    myDirectionY = 5 * Math.sin(dRadians) + theShip.getDirectionY();
+    System.out.println(theShip.getY());
  }
      public void setX(int x) {
     myCenterX = x;
@@ -47,30 +50,31 @@ public class Bullet extends Floater{
     stroke(myColor);    
     
     //translate the (x,y) center of the ship to the correct position
-    translate((float)myCenterX, (float)myCenterY);
+    //translate((float)myCenterX, (float)myCenterY);
 
     //convert degrees to radians for rotate()     
-    float dRadians = (float)(myPointDirection*(Math.PI/180));
+    //float dRadians = (float)(myPointDirection*(Math.PI/180));
     
     //rotate so that the polygon will be drawn in the correct direction
-    rotate(dRadians);
+    //rotate(dRadians);
     
     //draw the polygon
-    beginShape();
-    for (int nI = 0; nI < corners; nI++)
-    {
-      vertex(xCorners[nI], yCorners[nI]);
-    }
-    endShape(CLOSE);
+    //beginShape();
+    //for (int nI = 0; nI < corners; nI++)
+    //{
+    //  vertex(xCorners[nI], yCorners[nI]);
+    //}
+    //endShape(CLOSE);
     
     fill(255);
-    
-    ellipse(Bessie.getX()-height/2, Bessie.getY()-height/2, 10, 10);
+    ellipse((float)myCenterX, (float)myCenterY, 10, 10);
+    //ellipse((float)Bessie.myCenterX,(float)Bessie.myCenterY,1000,1000);
 
     //"unrotate" and "untranslate" in reverse order
-    rotate(-1*dRadians);
-    translate(-1*(float)myCenterX, -1*(float)myCenterY);
-    System.out.println(Bessie.getX()+"/"+Bessie.getY()+"/"+myCenterX);
+    //rotate(-1*dRadians);
+    //translate(-1*(float)myCenterX, -1*(float)myCenterY);
+    //System.out.println(Bessie.getX()+"/"+Bessie.getY()+"/"+myCenterX);
+    
   }   
  public void move ()   //move the floater in the current direction of travel
   {      
@@ -97,4 +101,11 @@ public class Bullet extends Floater{
     //  myCenterY = height;    
     //}   
   }   
+  //public void checkCollision(){
+  //  for (Asteroid a : <Asteroid>){
+  //    for (Bullet b: <Bullet>){
+  //    if (dist((float)a.myCenterX,(float)a.myCenterY,(float)b.myCenterX,(float)b.myCenterY)<20){
+  //      Bullet.remove(b);
+  //      Asteroid.remove(b);
+  //    }}
 } 

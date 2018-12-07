@@ -1,53 +1,15 @@
 //CONSOLE>LOG!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 public class Asteroid extends Floater
 {
-  private int number;
+  
   private int rotSpeed;
-  private int aX,aY,bX,bY,cX,cY;
-  public Asteroid(int place) {
-    number = place;
+
+  public Asteroid() {
     rotSpeed =  (int)(Math.random()*3)+1;;
     corners = 8;
     xCorners = new int[corners];
     yCorners = new int[corners];
-    aX = (int)(Math.random()*5-10)*2;
-    aY = -8*2;
-    bX = (int)(Math.random()*5+10)*2;
-    bY =0*2;
-    cX =(int)(Math.random()*5-10)*2;
-    cY =8*2;
-    //xCorners[0] = (0+(int)(Math.random()*5-10))*2;
-    //yCorners[0] = (10+(int)(Math.random()*3-10))*2;
-    //xCorners[1] = (5+(int)(Math.random()*5-10))*2;
-    //yCorners[1] = (5+(int)(Math.random()*3-10))*2;
-    //xCorners[2] = (10+(int)(Math.random()*5-10))*2;
-    //yCorners[2] = (0+(int)(Math.random()*3-10))*2;
-    //xCorners[3] = (5+(int)(Math.random()*5-10))*2;
-    //yCorners[3] = (-5+(int)(Math.random()*3-10))*2;
-    //xCorners[4] = (0+(int)(Math.random()*5-10))*2;
-    //yCorners[4] = (-10+(int)(Math.random()*3-10))*2;
-    //xCorners[5] =(-5+(int)(Math.random()*5-10))*2;
-    //yCorners[5] = (-5+(int)(Math.random()*3-10))*2;
-    //xCorners[6] = (-10+(int)(Math.random()*5-10))*2;
-    //yCorners[6] = (0+(int)(Math.random()*3-10))*2;
-    //xCorners[7] = (-5+(int)(Math.random()*5-10)*2);
-    //yCorners[7] = (5+(int)(Math.random()*3-10))*2;
-    //xCorners[0] = (0+(int)(Math.random()*5-10))*2;
-    //yCorners[0] = (10+(int)(Math.random()*3-10))*2;
-    //xCorners[1] = (5+(int)(Math.random()*5-10))*2;
-    //yCorners[1] = (5+(int)(Math.random()*3-10))*2;
-    //xCorners[2] = (10+(int)(Math.random()*5-10))*2;
-    //yCorners[2] = (0+(int)(Math.random()*3-10))*2;
-    //xCorners[3] = (5+(int)(Math.random()*5-10))*2;
-    //yCorners[3] = (-5+(int)(Math.random()*3-10))*2;
-    //xCorners[4] = (0+(int)(Math.random()*5-10))*2;
-    //yCorners[4] = (-10+(int)(Math.random()*3-10))*2;
-    //xCorners[5] =(-5+(int)(Math.random()*5-10))*2;
-    //yCorners[5] = (-5+(int)(Math.random()*3-10))*2;
-    //xCorners[6] = (-10+(int)(Math.random()*5-10))*2;
-    //yCorners[6] = (0+(int)(Math.random()*3-10))*2;
-    //xCorners[7] = (-5+(int)(Math.random()*5-10)*2);
-    //yCorners[7] = (5+(int)(Math.random()*3-10))*2;
+   
     for (int i = 0; i < 8; i++) {
   double magnitude = Math.random();
   double x = magnitude*30*Math.sin(i*Math.PI/4);
@@ -160,24 +122,24 @@ strokeWeight(1.5);
     rotate(-1*dRadians);
     translate(-1*(float)myCenterX-2, -1*(float)myCenterY-2);
   }  
-  public void checkCollision(){
+  //public void checkCollision(){
     
-      if (dist((float)myCenterX,(float)myCenterY,(float)s.myCenterX,(float)s.myCenterY)<20){
+      //if (dist((float)myCenterX,(float)myCenterY,(float)s.myCenterX,(float)s.myCenterY)<20){
         //System.out.println("true");
         //System.out.println(dist(xCorners[i],xCorners[i],s.xCorners[0],s.yCorners[0]));
-      ellipse((float)myCenterX,(float)myCenterY,10,10);
+      //ellipse((float)myCenterX,(float)myCenterY,10,10);
 
       //list.remove(new Integer(0));
       //list.remove(new Integer(1));
-      list.remove(list.get(number));
-      for (int i = 0; i < list.size(); i++){
-        if (list.get(i).number>number){
-          list.get(i).number-=1;
-        }
-      }
-      System.out.println(list.size());
       
-    }
+      //list.remove(list.get(number));
+      //for (int i = 0; i < list.size(); i++){
+      //  if (list.get(i).number>number){
+      //    list.get(i).number-=1;
+      //  }
+      //}
+      //list.remove(a);
+      //System.out.println(list.size());
+      
+    //}
   }
-
-}

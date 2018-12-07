@@ -21,7 +21,7 @@ public void setup()
     twinkle[i] = new Star();
   }
   for(int i =0; i<30;i++){
-    list.add(new Asteroid(list.size()));
+    list.add(new Asteroid());
     
   }
 
@@ -32,6 +32,11 @@ public void draw()
  
  background(0);
   //b.show();
+  for (int i = 0; i<list.size(); i++) {
+    
+  if (dist((float)list.get(i).getX(),(float)list.get(i).getY(),(float)s.myCenterX,(float)s.myCenterY)<20){
+    list.remove(i);
+  }}
   s.show();
   s.move();
   //b.show();
@@ -42,7 +47,7 @@ public void draw()
 for(int i =0; i<list.size();i++){
    list.get(i).move();
    list.get(i).show();
-   list.get(i).checkCollision();
+   //list.get(i).checkCollision();
   //rock[i].setDirectionX((int)(Math.random()*3)-1);
   //rock[i].setDirectionY((int)(Math.random()*3)-1);
    
@@ -52,6 +57,42 @@ for(int i =0; i<list.size();i++){
    bList.get(i).show();
    //bList.get(i).checkCollision();
 
+  }
+  for (int i = 0 ; i<bList.size(); i++){
+      for (int ii = 0; ii<list.size(); ii++){
+      
+        float d = (dist((float)list.get(ii).getX(),(float)list.get(ii).getY(),(float)bList.get(i).getX(),(float)bList.get(i).getY()));
+        
+        if (d < 20 && list.get(ii) instanceof SmallAsteroid != true ){
+        list.add(new SmallAsteroid(list.get(ii).getX(),list.get(ii).getY()));
+        list.add(new SmallAsteroid(list.get(ii).getX(),list.get(ii).getY()));
+          list.remove(list.get(ii));
+        bList.remove(bList.get(i));
+        
+        
+        break;
+        
+        
+        //println("a");
+        
+      }
+      else if (d < 8 && list.get(ii) instanceof SmallAsteroid ){
+        
+          list.remove(list.get(ii));
+        bList.remove(bList.get(i));
+        
+        break;
+        
+        
+        //println("a");
+        
+      }
+      
+      
+      
+    
+  }
+      
   }
 }
 public void keyPressed() {
@@ -78,4 +119,7 @@ public void keyPressed() {
   if (key == 'g') {
      bList.add(new Bullet(s));
    }
+   // if (key == 'r') {
+   //  bList.add(new DeathRay(s));
+   //}
 }
