@@ -125,8 +125,8 @@ strokeWeight(1.5);
   //public void checkCollision(){
     
       //if (dist((float)myCenterX,(float)myCenterY,(float)s.myCenterX,(float)s.myCenterY)<20){
-        //System.out.println("true");
-        //System.out.println(dist(xCorners[i],xCorners[i],s.xCorners[0],s.yCorners[0]));
+        
+       
       //ellipse((float)myCenterX,(float)myCenterY,10,10);
 
       //list.remove(new Integer(0));
@@ -139,7 +139,7 @@ strokeWeight(1.5);
       //  }
       //}
       //list.remove(a);
-      //System.out.println(list.size());
+     
       
     //}
   }

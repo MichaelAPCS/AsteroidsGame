@@ -12,7 +12,7 @@ public class Bullet extends Floater{
     dRadians = myPointDirection*(Math.PI/180);
     myDirectionX = 5 * Math.cos(dRadians) + theShip.getDirectionX();
     myDirectionY = 5 * Math.sin(dRadians) + theShip.getDirectionY();
-    System.out.println(theShip.getY());
+    
  }
      public void setX(int x) {
     myCenterX = x;
@@ -73,7 +73,7 @@ public class Bullet extends Floater{
     //"unrotate" and "untranslate" in reverse order
     //rotate(-1*dRadians);
     //translate(-1*(float)myCenterX, -1*(float)myCenterY);
-    //System.out.println(Bessie.getX()+"/"+Bessie.getY()+"/"+myCenterX);
+    
     
   }   
  public void move ()   //move the floater in the current direction of travel

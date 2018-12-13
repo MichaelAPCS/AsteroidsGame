@@ -96,7 +96,7 @@ public class Spaceship extends Floater {
       ellipse(-random(10, 40), random(-2, 2), random(5, 20), random(5, 20));
       sizeFire = random(10,27);
       ellipse(-random(30,40),0,sizeFire,sizeFire);
-      System.out.println(myCenterX+"/////" +myCenterY);
+      
     }
     //"unrotate" and "untranslate" in reverse order
     rotate(-1*dRadians);
