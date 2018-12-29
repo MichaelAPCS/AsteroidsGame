@@ -1,7 +1,9 @@
 //CONSOLE>LOG!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+private double sumTot = 0.0;
+
 public class Asteroid extends Floater
 {
-  
+  protected double sum, totSum;
   private int rotSpeed;
 
   public Asteroid() {
@@ -9,6 +11,7 @@ public class Asteroid extends Floater
     corners = 8;
     xCorners = new int[corners];
     yCorners = new int[corners];
+    
    
     for (int i = 0; i < 8; i++) {
   double magnitude = Math.random();
@@ -17,7 +20,15 @@ public class Asteroid extends Floater
   xCorners[i] = (int)x;
   yCorners[i] = (int)y;
 }
+    for (int i = 0; i < xCorners.length-1; i++) {
+        sum += (xCorners[i] * yCorners[i + 1]) - (xCorners[i + 1] * yCorners[i]);
+        
+    }
 
+    //println( Math.abs(sum / 2));
+    totSum = Math.abs(sum / 2);
+    
+    
 
     myColor =  color(255);
     myCenterX = (int)(Math.random()*width);
@@ -25,12 +36,14 @@ public class Asteroid extends Floater
     myPointDirection =   0;
     myDirectionX = Math.random()*2-1;
     myDirectionY = Math.random()*2-1;
+     
+   
   }
   public void move() {
   turn(rotSpeed);
       //change the x and y coordinates by myDirectionX and myDirectionY       
-    myCenterX += myDirectionX;    
-    myCenterY += myDirectionY;     
+    myCenterX += myDirectionX*(800)/(totSum);    
+    myCenterY += myDirectionY* (800)/(totSum);     
 
     //wrap around screen    
     if(myCenterX >width+50)
