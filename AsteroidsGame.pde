@@ -20,6 +20,7 @@ int BulletMana;
 int timer;
 int sizeTimer;
 int start;
+int score;
 public void setup()
 {
   //your code here
@@ -53,7 +54,9 @@ public void setup()
 public void draw()
 {
   //your code here
-
+  
+ 
+  
   background(0);
   //b.show();
   LivesCheck();
@@ -70,8 +73,10 @@ timer = frameCount;
   }
 
   //Draw mana of weapons
-
-
+//score
+  textSize(32);
+  fill(0, 102, 153);
+  text("SCORE:"+score, 10, 100); 
   //Bullet
 //New Asteroids
 if(millis()%100==0){
@@ -142,15 +147,16 @@ if(millis()%100==0){
       //}
       if (d<55 && bList.get(i) instanceof DeathRay) {
         list.remove(list.get(ii));
+        score += 213;
         //bList.remove(bList.get(i));
         break;
       }
-      if (d < 20 && list.get(ii) instanceof SmallAsteroid != true ) {
+      if (d < 20 && list.get(ii) instanceof SmallAsteroid != true) {
         list.add(new SmallAsteroid(list.get(ii).getX(), list.get(ii).getY()));
         list.add(new SmallAsteroid(list.get(ii).getX(), list.get(ii).getY()));
         list.remove(list.get(ii));
         bList.remove(bList.get(i));
-
+        score += 250;
 
         break;
 
@@ -160,9 +166,9 @@ if(millis()%100==0){
 
         list.remove(list.get(ii));
         bList.remove(bList.get(i));
-
+        score += 53;
         break;
-
+        
 
         //println("a");
       }
@@ -233,5 +239,8 @@ public void keyPressed() {
   if (lives <= 0) {
     textSize(100);
     text("You Lose",width/2-200,width/2);
+    textSize(40);
+    text("Refresh Browser to Play Again", width/2-200,width/2+100);
+    noLoop();
   }
 }
