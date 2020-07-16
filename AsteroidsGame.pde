@@ -145,7 +145,7 @@ if(millis()%100==0){
 
       //  break;
       //}
-      if (d<55 && bList.get(i) instanceof DeathRay || bList.get(i) instanceof Bullet == false) {
+      if (d<55 && bList.get(i) instanceof DeathRay) {
         list.remove(list.get(ii));
         score += 213;
         //bList.remove(bList.get(i));
