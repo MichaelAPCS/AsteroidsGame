@@ -182,6 +182,9 @@ public void keyPressed() {
   if (key == 'd') {
     s.turn(-12);
   }
+  if (key == ' ') {
+    s.accelerateToZero(0);
+  }
   if (key == 'z') {
     s.setDirectionX(0);
     s.setDirectionY(0);
@@ -211,7 +214,7 @@ public void keyPressed() {
 }
   public void superExpand(Spaceship k){
     
-   println("l");
+   //println("l");
 //    for (int ii = 0; ii < s.xCorners.length; ii++){
 //        k.xCorners[ii]*=2;
 //        k.yCorners[ii]*=2;
