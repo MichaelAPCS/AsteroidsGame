@@ -28,9 +28,9 @@ public void setup()
   background(0);
   lives = 3;
   
-  BulletMana = 100;
-  DeathRayMana = 100;
-  LightningMana = 100;
+  BulletMana = 50;
+  DeathRayMana = 50;
+  LightningMana = 50;
   s = new Spaceship();
   twinkle = new Star[100];
   //b = new Bullet(s);

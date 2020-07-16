@@ -87,8 +87,8 @@ LightBolt[] bolt = new LightBolt[15];
     if (i == 15) {
       x = myPointX;
     }
-    println(x);
-    println(y);
+    //println(x);
+    //println(y);
     bolt[i] = (new LightBolt(x,y));
     
    

@@ -47,13 +47,6 @@ public DeathRay(){
    public void show ()  //Draws the floater at the current position  
   {             
     noFill();  
-     
-    
- 
-    
-    
-  
-    
     stroke(30);
     ellipse((float)myCenterX, (float)myCenterY, 100, 100);
     
@@ -68,6 +61,7 @@ public DeathRay(){
     ellipse((float)myCenterX, (float)myCenterY, (float)Math.random()*100, 100);
     ellipse((float)myCenterX, (float)myCenterY, (float)Math.random()*100, 100);
    popMatrix();
+   strokeWeight(1); 
    
 
     
