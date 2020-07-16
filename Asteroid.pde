@@ -6,6 +6,39 @@ public class Asteroid extends Floater
   protected double sum, totSum;
   private int rotSpeed;
 
+  public Asteroid(int a) {
+    rotSpeed =  (int)(Math.random()*3)+1;;
+    corners = 8;
+    xCorners = new int[corners];
+    yCorners = new int[corners];
+    
+   
+    for (int i = 0; i < 8; i++) {
+  double magnitude = Math.random();
+  double x = magnitude*30*Math.sin(i*Math.PI/4);
+  double y = magnitude*30*Math.cos(i*Math.PI/4);
+  xCorners[i] = (int)x;
+  yCorners[i] = (int)y;
+}
+    for (int i = 0; i < xCorners.length-1; i++) {
+        sum += (xCorners[i] * yCorners[i + 1]) - (xCorners[i + 1] * yCorners[i]);
+        
+    }
+
+    //println( Math.abs(sum / 2));
+    totSum = Math.abs(sum / 2);
+    
+    
+
+    myColor =  color(255);
+    myCenterX = (int)(Math.random()*width)+width;
+    myCenterY = (int)(Math.random()*width);
+    myPointDirection =   0;
+    myDirectionX = Math.random()*2-1;
+    myDirectionY = Math.random()*2-1;
+     
+   
+  }
   public Asteroid() {
     rotSpeed =  (int)(Math.random()*3)+1;;
     corners = 8;
