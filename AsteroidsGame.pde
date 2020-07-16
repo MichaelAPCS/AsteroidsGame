@@ -56,7 +56,7 @@ public void draw()
 
   background(0);
   //b.show();
-  //LivesCheck();
+  LivesCheck();
 timer = frameCount;
   //Increase Mana
   if (timer%10 == 0) {
@@ -82,12 +82,12 @@ if(millis()%100==0){
   fill(255);
   rect(10, 900, BulletMana, 5);
   noFill();
-  rect(10, 920, 100, 5);
+  //rect(10, 920, 100, 5);
   //fill(255);
   //rect(10, 920, LightningMana, 5);
   //noFill();
   rect(10, 940, 100, 5);
-  fill(255);
+  fill(154);
   rect(10, 940, DeathRayMana, 5);
   //
   //if (sizeTimer == frameCount){
