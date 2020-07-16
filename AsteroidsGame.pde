@@ -56,7 +56,7 @@ public void draw()
 
   background(0);
   //b.show();
-  LivesCheck();
+  //LivesCheck();
 timer = frameCount;
   //Increase Mana
   if (timer%10 == 0) {
