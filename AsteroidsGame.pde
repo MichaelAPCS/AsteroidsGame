@@ -8,13 +8,13 @@ import static java.util.Comparator.comparing;
 //your variable declarations here
 ArrayList <Bullet> bList;
 ArrayList <DeathRay> rayList;
-ArrayList <Lightning> strikeList;
+//ArrayList <Lightning> strikeList;
 Spaceship s;
 Star[] twinkle;
 //Asteroid[] rock;
 ArrayList <Asteroid> list;
 int lives;
-int LightningMana;
+//int LightningMana;
 int DeathRayMana;
 int BulletMana;
 int timer;
@@ -30,7 +30,7 @@ public void setup()
   
   BulletMana = 50;
   DeathRayMana = 50;
-  LightningMana = 50;
+  //LightningMana = 50;
   s = new Spaceship();
   twinkle = new Star[100];
   //b = new Bullet(s);
@@ -38,8 +38,8 @@ public void setup()
   bList.add(new Bullet(s));
   rayList = new ArrayList <DeathRay>();
   rayList.add(new DeathRay(s));
-  strikeList = new ArrayList <Lightning>();
-  strikeList.add(new Lightning(s));
+  //strikeList = new ArrayList <Lightning>();
+  //strikeList.add(new Lightning(s));
 
 
   list = new ArrayList <Asteroid>();
@@ -60,8 +60,8 @@ public void draw()
 timer = frameCount;
   //Increase Mana
   if (timer%10 == 0) {
-    if(LightningMana<100){
-    LightningMana++;}
+    //if(LightningMana<100){
+    //LightningMana++;}
     if(DeathRayMana<100){
     DeathRayMana++;}
     if(BulletMana<100){
@@ -83,9 +83,9 @@ if(millis()%100==0){
   rect(10, 900, BulletMana, 5);
   noFill();
   rect(10, 920, 100, 5);
-  fill(255);
-  rect(10, 920, LightningMana, 5);
-  noFill();
+  //fill(255);
+  //rect(10, 920, LightningMana, 5);
+  //noFill();
   rect(10, 940, 100, 5);
   fill(255);
   rect(10, 940, DeathRayMana, 5);
@@ -134,12 +134,12 @@ if(millis()%100==0){
     for (int ii = 0; ii<list.size(); ii++) {
 
       float d = (dist((float)list.get(ii).getX(), (float)list.get(ii).getY(), (float)bList.get(i).getX(), (float)bList.get(i).getY()));
-      if (d<200 && bList.get(i) instanceof Lightning) {
-        bList.get(i).strike((float)list.get(ii).getX(), (float)list.get(ii).getY());
-        list.remove(list.get(ii));
+      //if (d<200 && bList.get(i) instanceof Lightning) {
+      //  bList.get(i).strike((float)list.get(ii).getX(), (float)list.get(ii).getY());
+      //  list.remove(list.get(ii));
 
-        break;
-      }
+      //  break;
+      //}
       if (d<55 && bList.get(i) instanceof DeathRay) {
         list.remove(list.get(ii));
         //bList.remove(bList.get(i));
@@ -204,12 +204,12 @@ public void keyPressed() {
       DeathRayMana-=10;
     }
   }
-  if (key == 'q') {
-    if (LightningMana >=20) {
-      bList.add(new Lightning(s));
-      LightningMana-=20;
-    }
-  }
+  //if (key == 'q') {
+  //  if (LightningMana >=20) {
+  //    bList.add(new Lightning(s));
+  //    LightningMana-=20;
+  //  }
+  //}
   
 }
   public void superExpand(Spaceship k){
