@@ -25,7 +25,7 @@ public void setup()
 {
   //your code here
   //frameRate(2);
-  size(1000, 1000);
+  size(700, 700);
   background(0);
   lives = 3;
   
